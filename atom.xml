@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hexo</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2018-05-12T09:11:45.613Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>John Doe</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>第一篇博文</title>
+    <link href="http://yoursite.com/2018/05/12/first_blog/"/>
+    <id>http://yoursite.com/2018/05/12/first_blog/</id>
+    <published>2018-05-12T08:49:00.000Z</published>
+    <updated>2018-05-12T09:11:45.613Z</updated>
+    
+    <content type="html"><![CDATA[<p>刚刚学会用hexo搭建网站 来写第一篇博文 激励自己以后再实践中多多记录下自己遇到的困难 希望往后的自己能不断吸收大牛的经验 整理总结实践中遇到的问题对应的得到的解决方法 并根据自己的兴趣多多看书 多敲代码</p><figure class="highlight c"><figcaption><span>使用 CFile 的子类 CStdioFile 的注意事项</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">CString strPath;</span><br><span class="line">CString strRead;</span><br><span class="line">TCHAR PathPro[<span class="number">256</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">GetCurrentDirectoryW(<span class="number">256</span>,PathPro);<span class="comment">//PathPro: current dir path</span></span><br><span class="line">strPath = CString(PathPro)+_T(<span class="string">"\\"</span>) + SCRIPT_FILE_NAME;         <span class="comment">//SCRIPT_FILE_NAME: "User_Script.txt"</span></span><br><span class="line"></span><br><span class="line">CStdioFile f;  </span><br><span class="line">CFileException e;  </span><br><span class="line"><span class="keyword">if</span>(!f.Open(strPath,CFile::modeRead) )</span><br><span class="line"><span class="keyword">return</span> FALSE;  </span><br><span class="line"><span class="keyword">while</span>(f.ReadString(strRead))<span class="comment">//如果文件未读完，返回true，否则返回false。</span></span><br><span class="line">&#123;</span><br><span class="line">CString strTemp;</span><br><span class="line">strTemp.Format(_T(<span class="string">"%s\n"</span>),strRead);    <span class="comment">//检测是否成功读出每行数据</span></span><br><span class="line">LogToFiles(strTemp,<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line">f.Close();</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;刚刚学会用hexo搭建网站 来写第一篇博文 激励自己以后再实践中多多记录下自己遇到的困难 希望往后的自己能不断吸收大牛的经验 整理总结实践中遇到的问题对应的得到的解决方法 并根据自己的兴趣多多看书 多敲代码&lt;/p&gt;
+&lt;figure class=&quot;highlight c&quot;&gt;&lt;
+      
+    
+    </summary>
+    
+      <category term="日常" scheme="http://yoursite.com/categories/%E6%97%A5%E5%B8%B8/"/>
+    
+      <category term="C++" scheme="http://yoursite.com/categories/%E6%97%A5%E5%B8%B8/C/"/>
+    
+    
+      <category term="心情" scheme="http://yoursite.com/tags/%E5%BF%83%E6%83%85/"/>
+    
+      <category term="C++" scheme="http://yoursite.com/tags/C/"/>
+    
+      <category term="自学" scheme="http://yoursite.com/tags/%E8%87%AA%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2018/05/12/hello-world/"/>
+    <id>http://yoursite.com/2018/05/12/hello-world/</id>
+    <published>2018-05-12T07:20:29.391Z</published>
+    <updated>2018-05-12T07:20:29.391Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
