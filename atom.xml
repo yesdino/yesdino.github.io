@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>好奇心是最好的老師</title>
   
   
   <link href="/atom.xml" rel="self"/>
@@ -10,7 +10,7 @@
   <id>http://yoursite.com/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>Dino</name>
     
   </author>
   
@@ -40,11 +40,11 @@
       <category term="C++" scheme="http://yoursite.com/categories/%E6%97%A5%E5%B8%B8/C/"/>
     
     
+      <category term="自学" scheme="http://yoursite.com/tags/%E8%87%AA%E5%AD%A6/"/>
+    
       <category term="心情" scheme="http://yoursite.com/tags/%E5%BF%83%E6%83%85/"/>
     
       <category term="C++" scheme="http://yoursite.com/tags/C/"/>
-    
-      <category term="自学" scheme="http://yoursite.com/tags/%E8%87%AA%E5%AD%A6/"/>
     
   </entry>
   
