@@ -52,9 +52,9 @@
     <link href="http://yoursite.com/2018/05/18/freecodecamp%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
     <id>http://yoursite.com/2018/05/18/freecodecamp学习记录/</id>
     <published>2018-05-18T05:45:00.000Z</published>
-    <updated>2018-05-18T08:56:52.925Z</updated>
+    <updated>2018-05-18T16:02:03.049Z</updated>
     
-    <content type="html"><![CDATA[<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  $(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="string">"#target1"</span>).css(<span class="string">"color"</span>, <span class="string">"red"</span>);</span><br><span class="line">                                </span><br><span class="line">    $(<span class="string">"#target1"</span>).prop(<span class="string">"disabled"</span>, <span class="literal">true</span>);</span><br><span class="line">                                </span><br><span class="line">    <span class="comment">// 删除 target4元素                            </span></span><br><span class="line">    $(<span class="string">"#target4"</span>).remove();</span><br><span class="line">                                </span><br><span class="line">    <span class="comment">// 元素 target2 移动到 right-well 元素后面                            </span></span><br><span class="line">    $(<span class="string">"#target2"</span>).appendTo(<span class="string">"#right-well"</span>);</span><br><span class="line">                                </span><br><span class="line">    <span class="comment">//复制 #target5 ，添加到 #left-well 元素后面                     </span></span><br><span class="line">    $(<span class="string">"#target5"</span>).clone().appendTo(<span class="string">"#left-well"</span>);   </span><br><span class="line">  &#125;);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  $(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="string">"#target1"</span>).css(<span class="string">"color"</span>, <span class="string">"red"</span>);</span><br><span class="line">                                </span><br><span class="line">    $(<span class="string">"#target1"</span>).prop(<span class="string">"disabled"</span>, <span class="literal">true</span>);</span><br><span class="line">                                </span><br><span class="line">    <span class="comment">// 删除 target4元素                            </span></span><br><span class="line">    $(<span class="string">"#target4"</span>).remove();</span><br><span class="line">                                </span><br><span class="line">    <span class="comment">// 元素 target2 移动到 right-well 元素后面                            </span></span><br><span class="line">    $(<span class="string">"#target2"</span>).appendTo(<span class="string">"#right-well"</span>);</span><br><span class="line">                                </span><br><span class="line">    <span class="comment">//复制 #target5 ，添加到 #left-well 元素后面                     </span></span><br><span class="line">    $(<span class="string">"#target5"</span>).clone().appendTo(<span class="string">"#left-well"</span>);   </span><br><span class="line">     </span><br><span class="line">    <span class="comment">//确保给target元素的第二个子元素添加animated和bounce class                          </span></span><br><span class="line">    $(<span class="string">".target:nth-child(2)"</span>).addClass(<span class="string">"animated bounce"</span>);</span><br><span class="line">                                </span><br><span class="line">    <span class="comment">//获取class为target且索引为奇/偶数的所有元素</span></span><br><span class="line">    $(<span class="string">".target:odd"</span>)</span><br><span class="line">    $(<span class="string">".target:even"</span>)    </span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 整个页面边摇晃边淡出，这个效果真的好看                            </span></span><br><span class="line">    $(<span class="string">"body"</span>).addClass(<span class="string">"animated fadeOut"</span>); </span><br><span class="line">    <span class="comment">// 这个页面歪掉然后淡出,这个也好酷</span></span><br><span class="line">    $(<span class="string">"body"</span>).addClass(<span class="string">"animated hinge"</span>);                            </span><br><span class="line">  &#125;);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
@@ -102,9 +102,9 @@
       <category term="日常" scheme="http://yoursite.com/categories/%E6%97%A5%E5%B8%B8/"/>
     
     
-      <category term="心情" scheme="http://yoursite.com/tags/%E5%BF%83%E6%83%85/"/>
-    
       <category term="道理" scheme="http://yoursite.com/tags/%E9%81%93%E7%90%86/"/>
+    
+      <category term="心情" scheme="http://yoursite.com/tags/%E5%BF%83%E6%83%85/"/>
     
       <category term="人生感悟" scheme="http://yoursite.com/tags/%E4%BA%BA%E7%94%9F%E6%84%9F%E6%82%9F/"/>
     
@@ -136,9 +136,9 @@
       <category term="日常" scheme="http://yoursite.com/categories/%E6%97%A5%E5%B8%B8/"/>
     
     
-      <category term="心情" scheme="http://yoursite.com/tags/%E5%BF%83%E6%83%85/"/>
-    
       <category term="道理" scheme="http://yoursite.com/tags/%E9%81%93%E7%90%86/"/>
+    
+      <category term="心情" scheme="http://yoursite.com/tags/%E5%BF%83%E6%83%85/"/>
     
       <category term="人生感悟" scheme="http://yoursite.com/tags/%E4%BA%BA%E7%94%9F%E6%84%9F%E6%82%9F/"/>
     
@@ -170,9 +170,9 @@
       <category term="C++" scheme="http://yoursite.com/categories/%E6%97%A5%E5%B8%B8/C/"/>
     
     
-      <category term="自学" scheme="http://yoursite.com/tags/%E8%87%AA%E5%AD%A6/"/>
-    
       <category term="心情" scheme="http://yoursite.com/tags/%E5%BF%83%E6%83%85/"/>
+    
+      <category term="自学" scheme="http://yoursite.com/tags/%E8%87%AA%E5%AD%A6/"/>
     
       <category term="C++" scheme="http://yoursite.com/tags/C/"/>
     
