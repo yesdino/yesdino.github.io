@@ -50,6 +50,138 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2018-05-24T07:54:00.000Z"><a href="/2018/05/24/简单记录小知识点/">2018-05-24</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2018/05/24/简单记录小知识点/">记录零散的小知识点</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <ul>
+<li>1.rgba(r,g,b,a): a表透明度 可以直接使用</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2018-05-24T05:43:00.000Z"><a href="/2018/05/24/前端学习别人的建议/">2018-05-24</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2018/05/24/前端学习别人的建议/">前端学习别人的经验</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>知乎(空无戒)评论：<br>作为一个在职的前端，学习方向建议从手头上的实际项目出发，从封装工具到自动化构建，减少自己的一般事务性的体力活，然后再深入学习提升整体项目架构【前端部分】在拓展性，可维护性及易测试性。而后有余力再进一步思考如何提升性能 安全 交互体验 等等等等。<br>如果是一个脱产的想自学前端，那么学习方向就是能够较快地搭建出符合W3C规范的静态页面，稍微会写一些原生的JS以及熟练用JQ即可，然后就先找一个低薪的前端岗位做着，边做边学才比较靠谱。<br>那么2018值得关注的有哪些前端技术，我建议是 webAssambly  PWA indexedDB 和  webGL，这些都是已成为或将成为主流支持的前端新技术，并且必然影响前端今后的开发思路，流程及工作范围。个人认为真正的大前端不是往服务端走，而是完整的客户端web应用工程师</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2018-05-23T02:59:00.000Z"><a href="/2018/05/23/C++类实例化注意事项/">2018-05-23</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2018/05/23/C++类实例化注意事项/">C++类实例化</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Sample</span>&#123;</span></span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">		<span class="comment">//类的同名初始化函数</span></span><br><span class="line">        Sample(<span class="keyword">int</span> x)&#123;</span><br><span class="line">            p= <span class="keyword">new</span> <span class="keyword">int</span>(x);	<span class="comment">// new int(x) 新申请空间，调用完后不释放空间，所以将地址赋值给p 则p 指向了这段新申请内存空间，所以当做  *p 返回时，即取出p所执行空间的值，所以会输出5</span></span><br><span class="line">			<span class="comment">// *p=x;			// A: 将 x 的值赋值给 P 所指向的空间,而p之前并没有指向任何地方，这个操作将是非法的</span></span><br><span class="line">			<span class="comment">// *p=new int(x);	// C: 这个操作同 A 的结果一样 p之前并没有指向任何地方，这个操作将是非法的</span></span><br><span class="line">			<span class="comment">// p=&amp;x;			// D: 对x取地址，赋值给指针p，那么p 将指向 x 的那块内存空间，但是 x 是形式参数(也有人说是方法参数，都可以)，函数调用完了之后，内存就释放了，所以再返回 *p（即取出那块内存空间的值），已经找不到了。所以错误</span></span><br><span class="line">        &#125;</span><br><span class="line">		<span class="comment">//类的析构函数 当对象脱离其作用域时 系统自动执行析构函数 析构函数往往用来做“清理善后” 的工作 比如释放动态分配的内存等</span></span><br><span class="line">        ~Sample()&#123;</span><br><span class="line">            <span class="keyword">if</span>(p) <span class="keyword">delete</span> p;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">int</span> <span class="title">show</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="keyword">return</span> *p;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">        <span class="keyword">int</span> *p;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="function">Sample <span class="title">S</span><span class="params">(<span class="number">5</span>)</span></span>;	<span class="comment">//注初始化类的方式: Sample类名 S为实例名 实例函数形式要与类的同名初始化函数一致</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;S.show()&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2018-05-23T02:59:00.000Z"><a href="/2018/05/23/C++类继承注意事项/">2018-05-23</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2018/05/23/C++类继承注意事项/">C++类继承注意事项</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>&#123;</span></span><br><span class="line">  <span class="keyword">int</span> a1;	<span class="comment">//默认私有</span></span><br><span class="line"><span class="keyword">protected</span>:	<span class="comment">//私有成员不能被继承</span></span><br><span class="line">  <span class="keyword">int</span> a2;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">  <span class="keyword">int</span> a3;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span>:</span> <span class="keyword">public</span> A&#123;</span><br><span class="line">  <span class="keyword">int</span> b1;</span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">  <span class="keyword">int</span> b2;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">  <span class="keyword">int</span> b3;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span>:</span><span class="keyword">private</span> B&#123;	<span class="comment">//私有继承 父类的protected和public属性在子类中变为private</span></span><br><span class="line">  <span class="keyword">int</span> c1;</span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">  <span class="keyword">int</span> c2;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">  <span class="keyword">int</span> c3;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  B obb;</span><br><span class="line">  C obc;</span><br><span class="line">  <span class="built_in">cout</span>&lt;&lt;obb.a1;<span class="comment">//1	错	a1默认私有</span></span><br><span class="line">  <span class="built_in">cout</span>&lt;&lt;obb.a2;<span class="comment">//2	错	a2为父类私有成员</span></span><br><span class="line">  <span class="built_in">cout</span>&lt;&lt;obb.a3;<span class="comment">//3</span></span><br><span class="line">  <span class="built_in">cout</span>&lt;&lt;obc.b1;<span class="comment">//4	错	私有继承 不能访父类成员</span></span><br><span class="line">  <span class="built_in">cout</span>&lt;&lt;obc.b2;<span class="comment">//5	错	私有继承 不能访父类成员</span></span><br><span class="line">  <span class="built_in">cout</span>&lt;&lt;obc.b3;<span class="comment">//6	错	私有继承 不能访父类成员</span></span><br><span class="line">  <span class="built_in">cout</span>&lt;&lt;obc.c3;<span class="comment">//7		可以访问自己的成员</span></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">类的继承后方法属性变化：</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">	private 属性不能够被继承。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">	使用private继承，父类的protected和public属性在子类中变为private；</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">	使用protected继承，父类的protected和public属性在子类中变为protected；</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">	使用public继承，父类中的protected和public属性不发生改变; </span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">private, public, protected 访问标号的访问范围：</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">	private：只能由1.该类中的函数、2.其友元函数访问。</span></span><br><span class="line"><span class="comment">	不能被任何其他访问，该类的对象也不能访问。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">	protected：可以被1.该类中的函数、2.子类的函数、以及3.其友元函数访问。</span></span><br><span class="line"><span class="comment">	但不能被该类的对象访问。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">	public：可以被1.该类中的函数、2.子类的函数、3.其友元函数访问，也可以由4.该类的对象访问。</span></span><br><span class="line"><span class="comment"> </span></span><br><span class="line"><span class="comment">注：友元函数包括3种：设为友元的普通的非成员函数；设为友元的其他类的成员函数；设为友元类中的所有成员函数。</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2018-05-18T15:16:41.748Z"><a href="/2018/05/18/PS白色变透明/">2018-05-18</a></time>
       
       
@@ -240,7 +372,11 @@
   <h3 class="title">Categories</h3>
   <ul class="entry">
   
+    <li><a href="/categories/C/">C++</a><small>2</small></li>
+  
     <li><a href="/categories/日常/C/">C++</a><small>1</small></li>
+  
+    <li><a href="/categories/前端/">前端</a><small>1</small></li>
   
     <li><a href="/categories/自学/学习笔记/">学习笔记</a><small>1</small></li>
   
@@ -249,6 +385,8 @@
     <li><a href="/categories/日常/">日常</a><small>3</small></li>
   
     <li><a href="/categories/自学/">自学</a><small>1</small></li>
+  
+    <li><a href="/categories/随记/">随记</a><small>1</small></li>
   
   </ul>
 </div>
@@ -259,21 +397,25 @@
   <h3 class="title">Tags</h3>
   <ul class="entry">
   
-    <li><a href="/tags/C/">C++</a><small>1</small></li>
+    <li><a href="/tags/C/">C++</a><small>3</small></li>
   
     <li><a href="/tags/PS/">PS</a><small>1</small></li>
   
     <li><a href="/tags/人生感悟/">人生感悟</a><small>2</small></li>
   
-    <li><a href="/tags/前端/">前端</a><small>1</small></li>
+    <li><a href="/tags/前端/">前端</a><small>3</small></li>
   
     <li><a href="/tags/学习笔记/">学习笔记</a><small>2</small></li>
   
     <li><a href="/tags/心情/">心情</a><small>3</small></li>
   
+    <li><a href="/tags/总是忘记的/">总是忘记的</a><small>2</small></li>
+  
     <li><a href="/tags/日常/">日常</a><small>2</small></li>
   
-    <li><a href="/tags/自学/">自学</a><small>2</small></li>
+    <li><a href="/tags/经验建议/">经验建议</a><small>1</small></li>
+  
+    <li><a href="/tags/自学/">自学</a><small>6</small></li>
   
     <li><a href="/tags/道理/">道理</a><small>2</small></li>
   
